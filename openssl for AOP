@@ -1,0 +1,6 @@
+Download http://www.openssl.org/source/openssl-1.0.1.tar.gz
+
+# tar -xf openssl-1.0.1.tar.gz
+# cd openssl-1.0.1
+# ./config
+# sudo make install
