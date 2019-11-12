@@ -4,3 +4,9 @@ Download http://www.openssl.org/source/openssl-1.0.1.tar.gz
 # cd openssl-1.0.1
 # ./config
 # sudo make install
+
+
+
+POD document had syntax errors at /usr/bin/pod2man line 71.
+問題出現在由於OpenSSL 1.0.1e 與 perl5.18 不兼容，刪除 pod2man文件：sudo rm /usr/bin/pod2man
+ref: https://www.twblogs.net/a/5b83aeb32b71777a2efce6f8
