@@ -10,3 +10,22 @@ Download http://www.openssl.org/source/openssl-1.0.1.tar.gz
 POD document had syntax errors at /usr/bin/pod2man line 71.
 問題出現在由於OpenSSL 1.0.1e 與 perl5.18 不兼容，刪除 pod2man文件：sudo rm /usr/bin/pod2man
 ref: https://www.twblogs.net/a/5b83aeb32b71777a2efce6f8
+
+ref: https://www.isquarehost.com/blog/downgrade-openssl-version-linux/
+Question : How to downgrade openssl version on linux ?
+Ans : If you are facing any issue related to SSL or if you are not able to access the https website in IE from the windows XP then the problem in the related supported openssl version. The windows XP not supported some latest openssl version so that domain is not accessible on windows XP.
+You can easily downgrade the openssl version by using following steps.
+cd /usr/local/src/
+wget https://www.openssl.org/source/old/1.0.1/openssl-1.0.1k.tar.gz
+tar -xvf /usr/local/src/openssl-1.0.1k.tar.gz
+cd /usr/local/src/openssl-1.0.1k
+./config --prefix=/usr/local/ --openssldir=/usr/local/openssl
+make
+make test
+make install
+mv /usr/bin/openssl /usr/bin/openssl-bak
+cp -p /usr/local/openssl/bin/openssl /usr/bin/openssl
+or
+cp -p /usr/local/ssl/bin/openssl /usr/bin/openssl
+ll -ld /usr/bin/openssl
+openssl version
