@@ -22,7 +22,7 @@ cd /usr/local/src/openssl-1.0.1k
 ./config --prefix=/usr/local/ --openssldir=/usr/local/openssl
 make
 make test
-make install
+sudo make install
 mv /usr/bin/openssl /usr/bin/openssl-bak
 cp -p /usr/local/openssl/bin/openssl /usr/bin/openssl
 or
